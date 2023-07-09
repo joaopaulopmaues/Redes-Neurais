@@ -159,7 +159,7 @@ def main(dataset_name, dataset_path, model_name, epoch, learning_rate,
     #wandb.log({"Test AUC": test_auc})
 
     # Save the model checkpoint
-    torch.save(model.state_dict(), f'{save_dir}/{model_name}.pt')
+    #torch.save(model.state_dict(), f'{save_dir}/{model_name}.pt')
 
 
 if __name__ == '__main__':
