@@ -133,11 +133,11 @@ def main(dataset_name, dataset_path, model_name, epoch, learning_rate,
     model = get_model(model_name, dataset).to(device)
     # Use binary cross entropy loss
     criterion = torch.nn.BCELoss()
-    #Use L-BGFs optimizer
-    #optimizer = torch.optim.LBFGS(params=model.parameters(), lr=learning_rate)#, weight_decay=weight_decay)
+    #Use RMSprop optimizer
+    optimizer = torch.optim.RMSprop(params=model.parameters(), lr=learning_rate, weight_decay=weight_decay, alpha=0.9, eps=1e-06, momentum=0.2, centered=False)
     
     # Use Adam optimizer
-    optimizer = torch.optim.Adam(params=model.parameters(), lr=learning_rate, weight_decay=weight_decay)
+    #optimizer = torch.optim.Adam(params=model.parameters(), lr=learning_rate, weight_decay=weight_decay)
 
     # Log metrics with Weights and Biases
     #wandb.watch(model, log="all")
