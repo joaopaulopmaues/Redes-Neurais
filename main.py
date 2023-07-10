@@ -64,6 +64,7 @@ def train(model, optimizer, data_loader, criterion, device, log_interval=1000):
 
         # Log the total loss for every 1000 runs
         if (i + 1) % log_interval == 0:
+            #Aqui entrará comandos para plot dos resultados
             print('    - loss:', total_loss / log_interval)
             total_loss = 0
 
